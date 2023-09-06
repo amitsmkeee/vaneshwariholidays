@@ -41,7 +41,8 @@
         // echo $email_subject;
         // echo "<-->";
         // die;
-        mail($email_address, $email_subject, $email_body, $headers);
+        echo mail($email_address, $email_subject, $email_body, $headers);
+        die;
         //redirect to the 'thank you' page
         header('Location: index.html');
     }
