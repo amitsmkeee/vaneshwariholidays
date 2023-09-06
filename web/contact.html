@@ -93,7 +93,7 @@
          <main id="content" class="site-main">
             <!-- Inner Banner html start-->
             <section class="inner-banner-wrap">
-               <div class="inner-baner-container" style="background-image: url(assets/images/inner-banner.jpg);">
+               <div class="inner-baner-container" style="background-image: url(assets/images/about.jpeg);">
                   <div class="container">
                      <div class="inner-banner-content">
                         <h1 class="inner-title">Contact us</h1>
@@ -115,7 +115,7 @@
                                  <h2>CONTACT US TO GET MORE INFO</h2>
                                  <p>Embark on a transformative global adventure,discovering diverse cultures, breathtaking landscapes, and forging unforgettable memories.</p>
                               </div>
-                              <form class="contact-from">
+                              <form method="post" name="contact_form" action="contact-form-handler.php">
                                  <p>
                                     <input type="text" name="name" placeholder="Your Name*">
                                  </p>
@@ -123,7 +123,7 @@
                                     <input type="email" name="email" placeholder="Your Email*">
                                  </p>
                                  <p>
-                                    <textarea rows="8" placeholder="Your Message*"></textarea>
+                                    <textarea rows="8" name="message" placeholder="Your Message*"></textarea>
                                  </p>
                                  <p>
                                     <input type="submit" name="submit" value="SUBMIT MESSAGE">
@@ -259,5 +259,5 @@
       <script src="assets/vendors/slick/slick.min.js"></script>
       <script src="assets/js/jquery.slicknav.js"></script>
       <script src="assets/js/custom.min.js"></script>
-   </body>
+   </body>   
 </html>
