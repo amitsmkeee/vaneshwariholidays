@@ -24,11 +24,10 @@
     $email_body = "You have received a new message. ".
     " Here are the details:\n Name: $name \n ".
     "Email: $email_address\n Message \n $message";
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html\r\n";
-    $headers .= 'From: info@vaneshwariholidays.com' . "\r\n" .
-    'Reply-To: reply@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= 'From: '.$from  . "\r\n";
+    mail($to, $email_subject, $email_body, $headers);
     //redirect to the 'thank you' page
     header('Location: index.html');
     }
