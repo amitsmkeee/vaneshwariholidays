@@ -1,6 +1,6 @@
 <?php
     $errors = '';
-    $myemail = 'amitsmkeee@gmail.com';//<-----Put Your email address here.
+    $myemail = 'info@vaneshwariholidays.com';//<-----Put Your email address here.
     if(empty($_POST['name'])  ||
        empty($_POST['email']) || 
        empty($_POST['message']))
@@ -26,7 +26,7 @@
     "Email: $email_address\n Message \n $message";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-type: text/html\r\n";
-    $headers .= 'From: amitsmkeee1@gmail.com' . "\r\n" .
+    $headers .= 'From: info@vaneshwariholidays.com' . "\r\n" .
     'Reply-To: reply@example.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
     //redirect to the 'thank you' page
