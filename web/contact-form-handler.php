@@ -19,17 +19,17 @@
     
     if( empty($errors))
     {
-    $to = $myemail;
-    $email_subject = "Contact form submission: $name";
-    $email_body = "You have received a new message. ".
-    " Here are the details:\n Name: $name \n ".
-    "Email: $email_address\n Message \n $message";
-    $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-    $headers .= 'From: '.$to  . "\r\n";
-    echo mail($to, $email_subject, $email_body, $headers);
-    die;
-    //redirect to the 'thank you' page
-    header('Location: index.html');
+        $to = $myemail;
+        $email_subject = "Contact form submission: $name";
+        $email_body = "You have received a new message. ".
+        " Here are the details:\n Name: $name \n ".
+        "Email: $email_address\n Message \n $message";
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: '.$to  . "\r\n";
+        echo mail($to, $email_subject, $email_body, $headers);
+        die;
+        //redirect to the 'thank you' page
+        header('Location: index.html');
     }
 ?>
