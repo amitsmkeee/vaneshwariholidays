@@ -27,17 +27,8 @@
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
         $headers .= 'From: '.$to  . "\r\n";
-        echo $to;
-        echo "\n";
-        echo $headers;
-        echo "\n";
-
-        echo $email_body;
-        echo "\n";
-
+        echo mail($email_address, $email_subject, $email_body, $headers);
         die;
-        
-        mail($to, $email_subject, $email_body, $headers);
         //redirect to the 'thank you' page
         header('Location: index.html');
     }
