@@ -1509,7 +1509,22 @@ input[type=submit]:focus {
 .site-identity .site-title {
   margin: 0;
   line-height: 1.1;
-  font-size: 28px;
+  font-size: 30px;
+
+}
+
+.site-name {
+  float: left;
+  width: 720px;
+  right: 0;
+  margin: 0;
+  padding-left: 0;
+  line-height: 1.1;
+  font-size: 30px;
+  text-align: left;
+  background: -webkit-linear-gradient(rgb(42,92,141), rgb(28,136,204));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .site-identity .site-description {
   font-size: 13px;

@@ -39,7 +39,8 @@
         if (!$mail->send()) {
             echo 'Mailer Error: ' . $mail->ErrorInfo;
         } else {
-            echo 'The email message was sent.';
+            echo "succesfully sent mail";
+            header("Location: index.html");
         }
     } else {
             echo $errors;
