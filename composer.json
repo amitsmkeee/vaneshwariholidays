@@ -1,0 +1,12 @@
+{
+    "name": "vaneshwariholidays/web",
+    "type": "library",
+    "require": {
+        "phpmailer/phpmailer": "^6.8.1"
+    },
+    "authors": [
+        {
+            "name": "amit kumar"
+        }
+    ]
+}
