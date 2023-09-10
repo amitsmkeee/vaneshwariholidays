@@ -84,6 +84,9 @@
                            <li class="menu-item-has-children">
                               <a href="contact.html">Contact</a>
                            </li>
+                           <li class="menu-item-has-children">
+                              <a href="services.html">Services</a>
+                           </li>
                         </ul>
                      </nav>
                   </div>
@@ -109,26 +112,35 @@
                               </div>
                               <div class="col-lg-4">
                                  <!-- Home search field html start -->
+                                 <form method="post" name="contact_form" action="contact-form-handler.php">
                                  <div class="trip-search-section">
                                     <div class="container">
                                        <div class="trip-search-inner secondary-bg">
                                           <div class="input-group width-col-1">
+                                             <label> Name* </label>
+                                             <input type="text" name="name" placeholder="Enter Name">
+                                          </div>
+                                          <div class="input-group width-col-1">
+                                             <label> Email* </label>
+                                             <input type="text" name="email" placeholder="Enter Email">
+                                          </div>
+                                          <div class="input-group width-col-1">
                                              <label> Search Destination* </label>
-                                             <input type="text" name="s" placeholder="Enter Destination">
+                                             <input type="text" name="destination" placeholder="Enter Destination">
                                           </div>
                                           <div class="input-group width-col-1">
                                              <label> Pax Number* </label>
-                                             <input type="text" name="s" placeholder="No.of People">
+                                             <input type="text" name="noOfPeople" placeholder="No.of People">
                                           </div>
                                           <div class="input-group width-col-1">
                                              <label> Checkin Date* </label>
                                              <i class="far fa-calendar"></i>
-                                             <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                                             <input class="input-date-picker" name="from" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
                                           </div>
                                           <div class="input-group width-col-1">
                                              <label> Checkout Date* </label>
                                              <i class="far fa-calendar"></i>
-                                             <input class="input-date-picker" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
+                                             <input class="input-date-picker" name="to" type="text" name="s" placeholder="MM / DD / YY" autocomplete="off" readonly="readonly">
                                           </div>
                                           <div class="input-group width-col-1">
                                              <label class="screen-reader-text"> Search </label>
@@ -137,6 +149,7 @@
                                        </div>
                                     </div>
                                  </div>
+                              </form>
                                  <!-- search search field html end -->
                               </div>
                            </div>
