@@ -279,7 +279,7 @@ use Faker\Container\ContainerInterface;
  *
  * @property string $image
  *
- * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false, string $format = 'png')
+ * @method string image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false)
  *
  * @property string $email
  *
@@ -567,7 +567,7 @@ class Generator
 
     public function __construct(ContainerInterface $container = null)
     {
-        $this->container = $container ?: Container\ContainerBuilder::withDefaultExtensions()->build();
+        $this->container = $container ?: Container\ContainerBuilder::getDefault();
     }
 
     /**

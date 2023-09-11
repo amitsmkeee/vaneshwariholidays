@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd5780632cc57ba154246dbbef52619ae
+class ComposerStaticInitc5b31571411d55b6ddf6ba6deb0a5f3f
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -17,7 +17,6 @@ class ComposerStaticInitd5780632cc57ba154246dbbef52619ae
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         'e3b2795a8a512b6083af088fb53afe6c' => __DIR__ . '/..' . '/codeception/codeception/functions.php',
@@ -753,7 +752,6 @@ class ComposerStaticInitd5780632cc57ba154246dbbef52619ae
         'PharIo\\Manifest\\ManifestLoader' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestLoader.php',
         'PharIo\\Manifest\\ManifestLoaderException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/ManifestLoaderException.php',
         'PharIo\\Manifest\\ManifestSerializer' => __DIR__ . '/..' . '/phar-io/manifest/src/ManifestSerializer.php',
-        'PharIo\\Manifest\\NoEmailAddressException' => __DIR__ . '/..' . '/phar-io/manifest/src/exceptions/NoEmailAddressException.php',
         'PharIo\\Manifest\\PhpElement' => __DIR__ . '/..' . '/phar-io/manifest/src/xml/PhpElement.php',
         'PharIo\\Manifest\\PhpExtensionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpExtensionRequirement.php',
         'PharIo\\Manifest\\PhpVersionRequirement' => __DIR__ . '/..' . '/phar-io/manifest/src/values/PhpVersionRequirement.php',
@@ -997,10 +995,10 @@ class ComposerStaticInitd5780632cc57ba154246dbbef52619ae
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd5780632cc57ba154246dbbef52619ae::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd5780632cc57ba154246dbbef52619ae::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitd5780632cc57ba154246dbbef52619ae::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitd5780632cc57ba154246dbbef52619ae::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitc5b31571411d55b6ddf6ba6deb0a5f3f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitc5b31571411d55b6ddf6ba6deb0a5f3f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc5b31571411d55b6ddf6ba6deb0a5f3f::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitc5b31571411d55b6ddf6ba6deb0a5f3f::$classMap;
 
         }, null, ClassLoader::class);
     }

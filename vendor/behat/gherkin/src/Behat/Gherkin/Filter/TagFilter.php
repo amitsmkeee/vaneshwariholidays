@@ -137,10 +137,6 @@ class TagFilter extends ComplexFilter
     {
         $satisfies = true;
 
-        if (\strlen($this->filterString) === 0) {
-            return $satisfies;
-        }
-
         foreach (explode('&&', $this->filterString) as $andTags) {
             $satisfiesComma = false;
 

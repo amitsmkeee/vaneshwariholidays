@@ -1,8 +1,8 @@
 <?php
 /**
- * @link https://www.yiiframework.com/
+ * @link http://www.yiiframework.com/
  * @copyright Copyright (c) 2008 Yii Software LLC
- * @license https://www.yiiframework.com/license/
+ * @license http://www.yiiframework.com/license/
  */
 
 declare(strict_types=1);
@@ -210,19 +210,16 @@ class NavBar extends Widget
      */
     protected function renderToggleButton(): string
     {
-        if ($this->collapseOptions === false && $this->offcanvasOptions === false) {
-            return '';
-        }
-
         $options = $this->togglerOptions;
         Html::addCssClass($options, ['widget' => 'navbar-toggler']);
         if ($this->offcanvasOptions !== false) {
             $bsData = ['bs-toggle' => 'offcanvas', 'bs-target' => '#' . $this->offcanvasOptions['id']];
             $aria = $this->offcanvasOptions['id'];
-        } elseif ($this->collapseOptions !== false) {
+        } else {
             $bsData = ['bs-toggle' => 'collapse', 'bs-target' => '#' . $this->collapseOptions['id']];
             $aria = $this->collapseOptions['id'];
         }
+
 
         return Html::button(
             $this->togglerContent,
