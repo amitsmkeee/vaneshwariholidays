@@ -45,7 +45,7 @@ use yii\web\View;
         <div class="col-md-6">
             <?= $form->field($model, 'buyerAddress')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'buyerState')->textInput(['maxlength' => true]) ?>
-            <?= $form->field($model, 'buyerStateCode')->textInput()->label("GST IN/PAN") ?>
+            <?= $form->field($model, 'buyerStateCode')->textInput() ?>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12" style="margin-bottom:10px" id="section-list">
