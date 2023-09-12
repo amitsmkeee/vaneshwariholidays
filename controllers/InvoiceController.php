@@ -127,13 +127,12 @@ class InvoiceController extends Controller
                 $totalAmount = 0;
                 // $sectionMultiInsertCommand = new CDbMultiInsertCommand(new eeItem());
                 foreach ($sections as $section) {
-                    $section->invoiceId = $model->id;
+                    $section->invoiceId = $model->invoiceId;
                     $totalAmount += $section->amount;
                     // $section->libxml_set_external_entity_loader = $model->id;
                     $section->save(false);
                     // $sectionMultiInsertCommand->add($section, false);
                 }
-
                 $model->cgst = 0.05 * $totalAmount;
                 $model->sgst = 0.05 * $totalAmount;
                 $model->totalAmount = $totalAmount;

@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'amount',
             //'sgst',
             //'cgst',
-            //'totalAmount',
+            'totalAmount',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Invoice $model, $key, $index, $column) {

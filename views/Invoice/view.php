@@ -37,7 +37,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             'sgst',
             'cgst',
-            'totalAmount',
+            'buyerState',
+            'buyerStateCode',
+            'gstIN',
+            'totalAmount'
         ],
     ]) ?>
 

@@ -27,8 +27,8 @@ $html = "<div style='padding-right: 15px;padding-left: 15px;margin-right: auto;m
         <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Buyer Name&nbsp;:&nbsp;</label>
         <label>" . $model->buyerName . "</label>
     </span>
-    <span style='display: inline-block; width: 30%; margin-top:10px; float:left;'>
-        <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Invoice Id&nbsp;:&nbsp;</label>
+    <span style='display: inline-block; width: 30%; margin-top:10px; float:right;'>
+        <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Invoice No.&nbsp;:&nbsp;</label>
         <label>" . $model->invoiceId . "</label>
     </span>
     <br><br>
@@ -39,6 +39,20 @@ $html = "<div style='padding-right: 15px;padding-left: 15px;margin-right: auto;m
     <span style='display: inline-block; width: 30%; margin-top:10px; float:left;'>
         <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Invoice Date&nbsp;:&nbsp;</label>
         <label>" . $model->date . "</label>
+    </span>
+    <br><br>
+    <span style='display: inline-block; width: 70%; margin-top:10px; float:left;'>
+        <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>State&nbsp;:&nbsp;</label>
+        <label>" . $model->buyerState . "</label>
+    </span>
+    <span style='display: inline-block; width: 30%; margin-top:10px; float:left;'>
+        <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Place Of Supply&nbsp;:&nbsp;</label>
+        <label>" . $model->buyerState . " (" . $model->buyerStateCode . ") </label>
+    </span>
+    <br><br>
+    <span style='display: inline-block; width: 70%; margin-top:10px; float:left;'>
+        <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>GST IN/PAN&nbsp;:&nbsp;</label>
+        <label>" . $model->gstIN . "</label>
     </span>
 </div>
 ";
@@ -61,7 +75,7 @@ for ($i = 0; $i < count($sections); $i++) {
     $j = $i + 1;
     $html .= "<tr><td width='10%'>" . $j . "</td><td >" . $name . "</td><td width='20%'>" . $hsn . "</td><td width='20%'>" . $amount. "</td>";
 }
-$html .= "<tr><td colspan='3'> CSGT 5%</td><td>". $model->cgst. "</td></tr>";
+$html .= "<tr><td colspan='3'> CGST 5%</td><td>". $model->cgst. "</td></tr>";
 $html .= "<tr><td colspan='3'> SGST 5%</td><td>". $model->sgst. "</td></tr>";
 $html .= "<tr><td colspan='3'>TOTAL(Rs.)=  "  . ucwords(getIndianCurrency($model->totalAmount))  . "</td><td>".$model->totalAmount."</td></tr>";
 $html .= "</table>";

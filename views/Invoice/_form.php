@@ -39,10 +39,13 @@ use yii\web\View;
             <?= $form->field($model, 'invoiceId')->textInput(['readonly' => true])->label("Invoice Id") ?>
             <?= $form->field($model, 'date', ['inputOptions' => ['style' => 'width:100%', 'type' => 'date', 'class' => 'form-control']]) ?>
             <?= $form->field($model, 'buyerName')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'gstIN')->textInput(['maxlength' => true]) ?>
         </div>
 
         <div class="col-md-6">
             <?= $form->field($model, 'buyerAddress')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'buyerState')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'buyerStateCode')->textInput()->label("GST IN/PAN") ?>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12" style="margin-bottom:10px" id="section-list">
