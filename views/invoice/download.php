@@ -82,7 +82,7 @@ if (strtolower($model->buyerState) == "tamilnadu") {
     $html .= "<tr><td colspan='3'> CGST ". $model->gst/2 ."%</td><td>". $sum * 0.01 * $model->gst/2 . "</td></tr>";
     $html .= "<tr><td colspan='3'> SGST " . $model->gst/2 ."%</td><td>".$sum * 0.01 * $model->gst/2 . "</td></tr>";
 } else {
-    $html .= "<tr><td colspan='3'> IGST " . $model->gst ."%</td><td>". $sum * $model->gst . "</td></tr>";
+    $html .= "<tr><td colspan='3'> IGST " . $model->gst ."%</td><td>". $sum * 0.01 * $model->gst . "</td></tr>";
 }
 $html .= "<tr><td colspan='3'>TOTAL(Rs.)=  "  . ucwords(getIndianCurrency($model->totalAmount))  . "</td><td>".$model->totalAmount."</td></tr>";
 $html .= "</table>";
