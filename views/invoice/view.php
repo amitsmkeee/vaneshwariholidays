@@ -57,8 +57,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 
-<p style='color: #0288ae;font-size: 16px; bold;'>Total Amount: <?= Html::encode($totalAmount) ?></p>    
-<p style='color: #0288ae;font-size: 16px; bold;'>CGST: <?= Html::encode($cgst) ?></p>    
-<p style='color: #0288ae;font-size: 16px; bold;'>SGST: <?= Html::encode($sgst) ?></p>    
+<p style='color: #0288ae;font-size: 16px; bold;'>Total Amount: <?= Html::encode($model->totalAmount) ?></p>    
+<p style='color: #0288ae;font-size: 16px; bold;'>CGST: <?= Html::encode($model->cgst) ?></p>    
+<p style='color: #0288ae;font-size: 16px; bold;'>SGST: <?= Html::encode($model->sgst) ?></p>    
 
 </div>

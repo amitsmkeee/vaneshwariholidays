@@ -79,18 +79,10 @@ class InvoiceController extends Controller
         ]);
 
         $invoiceItems = InvoiceItem::findAll(['invoiceId' => $id]);
-        $totalAmount = 0;
-        foreach ($invoiceItems as $invoiceItem) {
-            $totalAmount += (float)$invoiceItem->amount;
-        }
-
 
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'dataProviderInvoiceItems' => $dataProviderInvoiceItems,
-            'totalAmount' => $totalAmount,
-            'cgst' => $totalAmount * 0.05,
-            'sgst' => $totalAmount * 0.05,
+            'dataProviderInvoiceItems' => $dataProviderInvoiceItems
         ]);
     }
 
@@ -133,9 +125,9 @@ class InvoiceController extends Controller
                     $section->save(false);
                     // $sectionMultiInsertCommand->add($section, false);
                 }
-                $model->cgst = 0.05 * $totalAmount;
-                $model->sgst = 0.05 * $totalAmount;
-                $model->totalAmount = $totalAmount;
+                $model->cgst = 0.025 * $totalAmount;
+                $model->sgst = 0.025 * $totalAmount;
+                $model->totalAmount = $totalAmount + 0.05 * $totalAmount;
                 $model->save(false);
 
                 // $sectionMultiInsertCommand->execute();
@@ -211,9 +203,9 @@ class InvoiceController extends Controller
                                 $section->save(false);
                             }
 
-                            $model->cgst = 0.05 * $totalAmount;
-                            $model->sgst = 0.05 * $totalAmount;
-                            $model->totalAmount = $totalAmount;
+                            $model->cgst = 0.025 * $totalAmount;
+                            $model->sgst = 0.025 * $totalAmount;
+                            $model->totalAmount = $totalAmount + 0.05 * $totalAmount;
                             $model->save(false);
                             $trans->commit();
                             Yii::$app->session->setFlash('success', " Invoice is successfully saved.");
