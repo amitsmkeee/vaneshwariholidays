@@ -54,6 +54,7 @@ class InvoiceController extends Controller
     public function actionIndex()
     {
         $searchModel = new InvoiceSearch();
+        $searchModel->companyId = Yii::$app->user->identity->companyId;
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -79,10 +80,14 @@ class InvoiceController extends Controller
         ]);
 
         $invoiceItems = InvoiceItem::findAll(['invoiceId' => $id]);
-
+        $sum = 0;
+        foreach($invoiceItems as $invoiceItem) {
+            $sum += $invoiceItem->amount;
+        }
         return $this->render('view', [
             'model' => $this->findModel($id),
-            'dataProviderInvoiceItems' => $dataProviderInvoiceItems
+            'dataProviderInvoiceItems' => $dataProviderInvoiceItems,
+            'sumAmount' => $sum
         ]);
     }
 
@@ -125,9 +130,8 @@ class InvoiceController extends Controller
                     $section->save(false);
                     // $sectionMultiInsertCommand->add($section, false);
                 }
-                $model->cgst = 0.025 * $totalAmount;
-                $model->sgst = 0.025 * $totalAmount;
-                $model->totalAmount = $totalAmount + 0.05 * $totalAmount;
+                $model->totalAmount = $totalAmount + $model->gst * 0.01 * $totalAmount;
+                $model->companyId = Yii::$app->user->identity->companyId;
                 $model->save(false);
 
                 // $sectionMultiInsertCommand->execute();
@@ -145,7 +149,7 @@ class InvoiceController extends Controller
                     __METHOD__
                 );
 
-                Yii::app()->user->setFlash('error', Yii::t("invoice-form", "Error while saving data:" . $exp->getMessage()));
+                Yii::$app->user->setFlash('error', Yii::t("invoice-form", "Error while saving data:" . $exp->getMessage()));
             }
         } else {
             $invoiceDetails = Invoice::find()->orderBy(['invoiceId' => SORT_DESC])->one();
@@ -203,9 +207,8 @@ class InvoiceController extends Controller
                                 $section->save(false);
                             }
 
-                            $model->cgst = 0.025 * $totalAmount;
-                            $model->sgst = 0.025 * $totalAmount;
-                            $model->totalAmount = $totalAmount + 0.05 * $totalAmount;
+                            $model->totalAmount = $totalAmount + $model->gst * 0.01 * $totalAmount;
+                            $model->companyId = Yii::$app->user->identity->companyId;
                             $model->save(false);
                             $trans->commit();
                             Yii::$app->session->setFlash('success', " Invoice is successfully saved.");
@@ -251,7 +254,7 @@ class InvoiceController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Invoice::findOne(['id' => $id])) !== null) {
+        if (($model = Invoice::findOne(['id' => $id, 'companyId' => Yii::$app->user->identity->companyId])) !== null) {
             return $model;
         }
 

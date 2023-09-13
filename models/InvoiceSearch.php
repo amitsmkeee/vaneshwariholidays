@@ -19,7 +19,7 @@ class InvoiceSearch extends Invoice
         return [
             [['id', 'invoiceId', 'companyId'], 'integer'],
             [['buyerName', 'buyerAddress', 'date'], 'safe'],
-            [['sgst', 'cgst', 'totalAmount'], 'number'],
+            [['gst', 'totalAmount'], 'number'],
         ];
     }
 
@@ -63,8 +63,6 @@ class InvoiceSearch extends Invoice
             'invoiceId' => $this->invoiceId,
             'date' => $this->date,
             'companyId' => $this->companyId,
-            'sgst' => $this->sgst,
-            'cgst' => $this->cgst,
             'totalAmount' => $this->totalAmount,
         ]);
 

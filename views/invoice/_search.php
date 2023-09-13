@@ -29,10 +29,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'amount') ?>
 
-    <?php // echo $form->field($model, 'sgst') ?>
-
-    <?php // echo $form->field($model, 'cgst') ?>
-
     <?php // echo $form->field($model, 'totalAmount') ?>
 
     <div class="form-group">

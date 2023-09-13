@@ -35,8 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'buyerName',
             'buyerAddress',
             'date',
-            'sgst',
-            'cgst',
+            'gst',
             'buyerState',
             'buyerStateCode',
             'gstIN',
@@ -56,9 +55,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'amount',   
         ],
     ]); ?>
-
+<?php
+    if (strtolower($model->buyerState) == "tamilnadu") {
+        echo "<p style='color: #0288ae;font-size: 16px; bold;'>CGST: " . Html::label(($model->gst/2 * 0.01) * $sumAmount) . "</p>";
+        echo "<p style='color: #0288ae;font-size: 16px; bold;'>SGST: " . Html::label(($model->gst/2 * 0.01) * $sumAmount) . "</p>";
+    } else {
+        echo "<p style='color: #0288ae;font-size: 16px; bold;'>IGST: " . Html::label($model->gst * 0.01 * $sumAmount) . "</p>";
+    }
+?>
 <p style='color: #0288ae;font-size: 16px; bold;'>Total Amount: <?= Html::encode($model->totalAmount) ?></p>    
-<p style='color: #0288ae;font-size: 16px; bold;'>CGST: <?= Html::encode($model->cgst) ?></p>    
-<p style='color: #0288ae;font-size: 16px; bold;'>SGST: <?= Html::encode($model->sgst) ?></p>    
-
 </div>

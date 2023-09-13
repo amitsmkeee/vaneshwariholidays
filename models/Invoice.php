@@ -13,8 +13,7 @@ use Yii;
  * @property string|null $buyerAddress
  * @property string|null $date
  * @property int|null $companyId
- * @property float|null $sgst
- * @property float|null $cgst
+ * @property float|null $gst
  * @property float|null $totalAmount
  * @property int $cBy
  * @property string $gstIN
@@ -39,7 +38,7 @@ class Invoice extends \yii\db\ActiveRecord
         return [
             [['invoiceId', 'companyId', 'cBy', 'buyerStateCode'], 'integer'],
             [['date'], 'safe'],
-            [['sgst', 'cgst', 'totalAmount'], 'number'],
+            [['gst', 'totalAmount'], 'number'],
             [['cBy', 'gstIN', 'buyerState', 'buyerStateCode'], 'required'],
             [['buyerName', 'buyerAddress'], 'string', 'max' => 255],
             [['gstIN'], 'string', 'max' => 20],
@@ -60,11 +59,10 @@ class Invoice extends \yii\db\ActiveRecord
             'buyerAddress' => 'Buyer Address',
             'date' => 'Date',
             'companyId' => 'Company ID',
-            'sgst' => 'Sgst',
-            'cgst' => 'Cgst',
+            'gst' => 'Gst',
             'totalAmount' => 'Total Amount',
             'cBy' => 'C By',
-            'gstIN' => 'Gst In/PAN',
+            'gstIN' => 'Gst In',
             'buyerState' => 'Buyer State',
             'buyerStateCode' => 'Buyer State Code',
         ];

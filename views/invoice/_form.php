@@ -43,6 +43,7 @@ use yii\web\View;
         </div>
 
         <div class="col-md-6">
+            <?= $form->field($model, 'gst')->textInput()->label("GST Percentage") ?>
             <?= $form->field($model, 'buyerAddress')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'buyerState')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'buyerStateCode')->textInput() ?>

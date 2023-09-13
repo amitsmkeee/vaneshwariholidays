@@ -36,8 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'date',
             //'companyId',
             //'amount',
-            //'sgst',
-            //'cgst',
             'totalAmount',
             [
                 'class' => ActionColumn::className(),
