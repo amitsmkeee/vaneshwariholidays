@@ -1,11 +1,13 @@
 <?php
    use PHPMailer\PHPMailer\PHPMailer;
    require '../vendor/autoload.php';
+   session_start();
    if(isset($_POST['submit'])) {
     $errors = '';
     if(empty($_POST['name'])  ||
        empty($_POST['email']) ||
-       empty($_POST['message']))
+       empty($_POST['message']) ||
+       strcmp($_POST['captcha_code'] ,$_SESSION['captcha_code']) != 0)
     {
         $errors .= "\n Error: all fields are required";
     }
@@ -36,7 +38,8 @@
         empty($_POST['destination']) ||
         empty($_POST['noOfPeople']) ||
         empty($_POST['from']) ||
-        empty($_POST['to']))
+        empty($_POST['to']) ||
+        strcmp($_POST['captcha_code'] ,$_SESSION['captcha_code']) != 0)
         {
             $errors .= "\n Error: all fields are required";
         }
