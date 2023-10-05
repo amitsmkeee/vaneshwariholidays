@@ -40,6 +40,7 @@ use yii\web\View;
             <?= $form->field($model, 'date', ['inputOptions' => ['style' => 'width:100%', 'type' => 'date', 'class' => 'form-control']]) ?>
             <?= $form->field($model, 'buyerName')->textInput(['maxlength' => true]) ?>
             <?= $form->field($model, 'gstIN')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'serviceCharge')->textInput() ?>
         </div>
 
         <div class="col-md-6">

@@ -84,10 +84,13 @@ class InvoiceController extends Controller
         foreach($invoiceItems as $invoiceItem) {
             $sum += $invoiceItem->amount;
         }
+        $model = $this->findModel($id);
+        $gstToBeCharged = $model->serviceCharge > 0 ? $model->serviceCharge : $sum;
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
             'dataProviderInvoiceItems' => $dataProviderInvoiceItems,
-            'sumAmount' => $sum
+            'gstToBeCharged' => $gstToBeCharged
         ]);
     }
 
@@ -130,7 +133,10 @@ class InvoiceController extends Controller
                     $section->save(false);
                     // $sectionMultiInsertCommand->add($section, false);
                 }
-                $model->totalAmount = $totalAmount + $model->gst * 0.01 * $totalAmount;
+                $serviceCharge = $model->serviceCharge;
+                //gst amount either on be service charge or total amount
+                $gstAmount = $serviceCharge > 0 ? $model->gst * 0.01 * $serviceCharge : $model->gst * 0.01 * $totalAmount;
+                $model->totalAmount = $totalAmount + $gstAmount + $serviceCharge;
                 $model->companyId = Yii::$app->user->identity->companyId;
                 $model->save(false);
 
@@ -154,6 +160,7 @@ class InvoiceController extends Controller
         } else {
             $invoiceDetails = Invoice::find()->orderBy(['invoiceId' => SORT_DESC])->one();
             $model->invoiceId = $invoiceDetails === null? 1 : $invoiceDetails->invoiceId + 1;
+            $model->serviceCharge = 0;
         }
         return $this->render('create', [
             'model' => $model,
@@ -207,7 +214,10 @@ class InvoiceController extends Controller
                                 $section->save(false);
                             }
 
-                            $model->totalAmount = $totalAmount + $model->gst * 0.01 * $totalAmount;
+                            $serviceCharge = $model->serviceCharge;
+                            //gst amount either on be service charge or total amount
+                            $gstAmount = $serviceCharge > 0 ? $model->gst * 0.01 * $serviceCharge : $model->gst * 0.01 * $totalAmount;
+                            $model->totalAmount = $totalAmount + $gstAmount + $serviceCharge;
                             $model->companyId = Yii::$app->user->identity->companyId;
                             $model->save(false);
                             $trans->commit();

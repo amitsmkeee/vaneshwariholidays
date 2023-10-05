@@ -67,6 +67,7 @@ $html .= "</br></br><table border='1' width='100%' style='border-collapse: colla
 </tr>
 </thead>";
 $sum = 0;
+$serviceCharge = $model->serviceCharge;
 for ($i = 0; $i < count($sections); $i++) {
     $a = $sections[$i]['name'];
     $b = $sections[$i]['hsn'];
@@ -78,11 +79,17 @@ for ($i = 0; $i < count($sections); $i++) {
     $sum += $amount;
     $html .= "<tr><td width='10%'>" . $j . "</td><td >" . $name . "</td><td width='20%'>" . $hsn . "</td><td width='20%'>" . $amount. "</td>";
 }
+$gstAmountToCharge = $model->serviceCharge > 0 ? $model->serviceCharge : $sum;
+
+if($model->serviceCharge > 0) {
+    $html .= "<tr><td colspan='3'> Service Charge</td><td>". $model->serviceCharge . "</td></tr>";
+}
 if (strtolower($model->buyerState) == "tamilnadu") {
-    $html .= "<tr><td colspan='3'> CGST ". $model->gst/2 ."%</td><td>". $sum * 0.01 * $model->gst/2 . "</td></tr>";
-    $html .= "<tr><td colspan='3'> SGST " . $model->gst/2 ."%</td><td>".$sum * 0.01 * $model->gst/2 . "</td></tr>";
+    
+    $html .= "<tr><td colspan='3'> CGST ". $model->gst/2 ."%</td><td>". $gstAmountToCharge * 0.01 * $model->gst/2 . "</td></tr>";
+    $html .= "<tr><td colspan='3'> SGST " . $model->gst/2 ."%</td><td>".$gstAmountToCharge * 0.01 * $model->gst/2 . "</td></tr>";
 } else {
-    $html .= "<tr><td colspan='3'> IGST " . $model->gst ."%</td><td>". $sum * 0.01 * $model->gst . "</td></tr>";
+    $html .= "<tr><td colspan='3'> IGST " . $model->gst ."%</td><td>". $gstAmountToCharge * 0.01 * $model->gst . "</td></tr>";
 }
 $html .= "<tr><td colspan='3'>TOTAL(Rs.)=  "  . ucwords(getIndianCurrency($model->totalAmount))  . "</td><td>".$model->totalAmount."</td></tr>";
 $html .= "</table>";
