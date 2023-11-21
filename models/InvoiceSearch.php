@@ -69,6 +69,8 @@ class InvoiceSearch extends Invoice
         $query->andFilterWhere(['like', 'buyerName', $this->buyerName])
             ->andFilterWhere(['like', 'buyerAddress', $this->buyerAddress]);
 
+        $query->orderBy(['id' => SORT_DESC]);
+
         return $dataProvider;
     }
 }
