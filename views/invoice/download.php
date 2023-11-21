@@ -42,7 +42,7 @@ $html = "<div style='padding-right: 15px;padding-left: 15px;margin-right: auto;m
         <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>Invoice Date&nbsp;:&nbsp;</label>
         <label>" . $model->date . "</label>
     </span>
-    <br><br>
+    <br><br><br><br>
     <span style='display: inline-block; width: 70%; margin-top:10px; float:left;'>
         <label style='color: #0288ae;font-size: 16px;font-weight: bold;'>State&nbsp;:&nbsp;</label>
         <label>" . $model->buyerState . "</label>
@@ -98,7 +98,7 @@ $footer = "<footer>
 <div style='float: left;width: 30%;'>
     <h4 style='color: #0288ae;'><b>Vaneshwari Holidays</b></h4>
     <h5 style='color: #0288ae;margin-top:-5px;'>A/C No. : 027505010308</h5>
-    <h5 style='color: #0288ae;margin-top:-5px;'>IFSC Code : ICICI0000275</h5>
+    <h5 style='color: #0288ae;margin-top:-5px;'>IFSC Code : ICIC0000275</h5>
     <h5 style='color: #0288ae;margin-top:-5px;'>ICICI Bank, Branch : PORUR TRUNK ROAD</h5>
 </div>
 <div style='float: right;width: 20%;'>
