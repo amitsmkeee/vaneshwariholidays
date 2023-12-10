@@ -58,15 +58,6 @@ return array (
       '@hail812/adminlte/widgets' => $vendorDir . '/hail812/yii2-adminlte-widgets/src',
     ),
   ),
-  'hail812/yii2-adminlte3' => 
-  array (
-    'name' => 'hail812/yii2-adminlte3',
-    'version' => '1.1.8.0',
-    'alias' => 
-    array (
-      '@hail812/adminlte3' => $vendorDir . '/hail812/yii2-adminlte3/src',
-    ),
-  ),
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
@@ -74,6 +65,15 @@ return array (
     'alias' => 
     array (
       '@yii/debug' => $vendorDir . '/yiisoft/yii2-debug/src',
+    ),
+  ),
+  'hail812/yii2-adminlte3' => 
+  array (
+    'name' => 'hail812/yii2-adminlte3',
+    'version' => '1.1.9.0',
+    'alias' => 
+    array (
+      '@hail812/adminlte3' => $vendorDir . '/hail812/yii2-adminlte3/src',
     ),
   ),
 );
