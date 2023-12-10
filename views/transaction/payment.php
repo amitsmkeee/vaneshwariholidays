@@ -14,9 +14,9 @@ $merchant_key = 'b4e47e11-9e6b-40cc-861c-e55bf7f2ff42';
       "merchantTransactionId" => $payment->merchantTransactionId,
       "merchantUserId" => $payment->merchantUserId,
       "amount" => $payment->amount*100,
-      "redirectUrl" => "https://enqi503h2ivdp.x.pipedream.net",
+      "redirectUrl" => "https://vaneshwariholidays.com/thank-you.html",
       "redirectMode" => "POST",
-      "callbackUrl" => "https://enqi503h2ivdp.x.pipedream.net",
+      "callbackUrl" => "https://vaneshwariholidays.com/thank-you.html",
       "paymentInstrument" => array(
           "type" => "PAY_PAGE"
       )
