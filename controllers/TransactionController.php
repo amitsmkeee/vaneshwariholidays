@@ -67,7 +67,7 @@ class TransactionController extends Controller
      * Creates a new Transaction model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
-     */
+     */ 
     public function actionCreate()
     {
         $model = new Transaction();
@@ -78,6 +78,8 @@ class TransactionController extends Controller
                 $payment->amount = floatval($model->amount);
                 $payment->merchantTransactionId = strval($model->id);
                 $payment->merchantUserId = $model->merchantUserId;
+                print_r($model->getErrors());
+                echo "<-------------------->";
                 print_r($model);
                 echo "<------>";
                 print_r($payment);
