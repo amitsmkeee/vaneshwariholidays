@@ -73,7 +73,7 @@ class TransactionController extends Controller
         $model = new Transaction();
         if ($this->request->isPost) {
             $model->companyId = Yii::$app->user->identity->companyId;
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post()) && $model->save(false)) {
                 $payment = new PaymentForm();
                 $payment->amount = floatval($model->amount);
                 $payment->merchantTransactionId = strval($model->id);
