@@ -77,7 +77,9 @@ class TransactionController extends Controller
                 $payment = new PaymentForm();
                 $payment->amount = floatval($model->amount);
                 $payment->merchantTransactionId = strval($model->id);
-                $payment->merchantUserId = $model->merchantUserId . "_" . strval($model->id);
+                $payment->merchantUserId = $model->merchantUserId;
+                print_r($payment);
+                die;
                 return $this->render('payment', [
                     'payment' => $payment
                 ]);
