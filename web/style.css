@@ -1515,16 +1515,18 @@ input[type=submit]:focus {
 
 .site-name {
   float: left;
-  width: 580px;
+  width: 600px;
   right: 0;
   margin: 0;
   padding-left: 0;
   line-height: 1.1;
   font-size: 30px;
   text-align: left;
-  background: -webkit-linear-gradient(rgb(42,92,141), rgb(28,136,204));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff;
+}
+
+.fixed-header .site-name {
+  color:  #101F46;
 }
 .site-identity .site-description {
   font-size: 13px;
