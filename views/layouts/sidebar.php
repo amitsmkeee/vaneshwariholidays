@@ -45,7 +45,6 @@ use yii\bootstrap4\Html;
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
                     ['label' => 'Invoice', 'icon' => 'th', 'url' => ['/invoice']],
-                    ['label' => 'Transaction', 'icon' => 'th', 'url' => ['/transaction']],
                     ['label' => 'user', 'icon' => 'file-code', 'url' => ['/user/change-password']],
                     ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
                     'url' => ['/site/logout'],
